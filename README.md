@@ -34,7 +34,7 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shyam2615/Resume_processor.git
    cd ResumeProcessor
    
 2. **Set Up Virtual Environment**
