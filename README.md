@@ -36,3 +36,26 @@
    ```bash
    git clone <repository-url>
    cd ResumeProcessor
+   
+2. **Set Up Virtual Environment**
+
+   ```bash
+   python -m venv env
+    source env/bin/activate  # On Windows use: env\Scripts\activate
+   
+3. **Install Dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+
+4. **Apply Migrations**
+
+   ```bash
+   python manage.py makemigrations
+    python manage.py migrate
+   
+5. **Run the Development Server**
+
+   ```bash
+   python manage.py runserver
+
