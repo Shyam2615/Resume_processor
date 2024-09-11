@@ -18,12 +18,10 @@ class ExtractResumeView(APIView):
         else:
             return Response({"error": "Unsupported file format"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Extract first name, email, and mobile number using regex
         first_name = self.extract_first_name(text)
         email = self.extract_email(text)
         mobile_number = self.extract_mobile_number(text)
 
-        # Save the extracted data
         candidate = Candidate.objects.create(first_name=first_name, email=email, mobile_number=mobile_number)
         candidate.save()
         serializer = CandidateSerializer(candidate)
@@ -43,7 +41,6 @@ class ExtractResumeView(APIView):
         return text
 
     def extract_first_name(self, text):
-        # A simple example; improve the logic as needed
         match = re.search(r'\b[A-Z][a-z]+\b', text)
         return match.group(0) if match else 'Unknown'
 
